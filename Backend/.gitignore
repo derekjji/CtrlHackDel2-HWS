@@ -1,5 +1,4 @@
-node_modules
-# Environment and credentials
+# Environment and credentials - CRITICAL SECURITY
 .encryption_key
 *.key
 *.pem
@@ -25,6 +24,9 @@ encrypt_util
 test_patient_*.json
 test_records/
 decrypted_*
+
+# Dependencies
+node_modules/
 
 # OS files
 .DS_Store

@@ -6,11 +6,36 @@ node_modules/
 frontend/dist/
 **/dist/
 
-# env files
+# Environment and credentials - CRITICAL SECURITY
 .env
 **/.env
+.encryption_key
+**/.encryption_key
+*.key
+*.pem
+config.ini
+**/config.ini
+
+# DO NOT IGNORE - these are safe templates
 !.env.example
 **/.env.example
+
+# Backend build artifacts
+*.o
+*.exe
+*.out
+healthcare_backend
+do_backend
+encrypt_util
+
+# Encrypted files
+*.encrypted
+*.encrypted.tmp
+
+# Test data
+test_patient_*.json
+test_records/
+decrypted_*
 
 # logs
 *.log
@@ -21,3 +46,6 @@ npm-debug.log*
 Thumbs.db
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
