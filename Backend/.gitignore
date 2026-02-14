@@ -5,6 +5,9 @@
 .env
 config.ini
 
+# DO NOT IGNORE - these are safe templates
+!.env.example
+
 # Build artifacts
 *.o
 *.exe

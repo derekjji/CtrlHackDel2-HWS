@@ -1,0 +1,64 @@
+# GitHub Actions Workflow - Healthcare Backend CI/CD
+# This file is safe to commit - it uses GitHub Secrets for credentials
+
+name: Healthcare Backend CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential libcurl4-openssl-dev libssl-dev
+    
+    - name: Compile backend
+      run: |
+        cd Backend
+        make
+    
+    - name: Test encryption utility
+      run: |
+        cd Backend
+        ./encrypt_util
+    
+    - name: Run full test suite
+      # Only run if secrets are configured
+      if: ${{ secrets.DO_SPACE_NAME != '' }}
+      env:
+        DO_SPACE_NAME: ${{ secrets.DO_SPACE_NAME }}
+        DO_REGION: ${{ secrets.DO_REGION }}
+        DO_ACCESS_KEY: ${{ secrets.DO_ACCESS_KEY }}
+        DO_SECRET_KEY: ${{ secrets.DO_SECRET_KEY }}
+        ENCRYPTION_KEY: ${{ secrets.ENCRYPTION_KEY }}
+      run: |
+        cd Backend
+        chmod +x run_tests.sh
+        ./run_tests.sh
+    
+    - name: Check for security issues
+      run: |
+        # Ensure no secrets in code
+        ! grep -r "DO_ACCESS_KEY.*=" --include="*.c" Backend/ || exit 1
+        ! grep -r "DO_SECRET_KEY.*=" --include="*.c" Backend/ || exit 1
+        echo "✓ No hardcoded secrets found"
+
+# To use this workflow:
+# 1. Go to your GitHub repo → Settings → Secrets → Actions
+# 2. Add the following secrets:
+#    - DO_SPACE_NAME
+#    - DO_REGION
+#    - DO_ACCESS_KEY
+#    - DO_SECRET_KEY
+#    - ENCRYPTION_KEY
+# 3. Push your code and the workflow will run automatically
