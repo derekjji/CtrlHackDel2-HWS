@@ -1,0 +1,98 @@
+{
+  "patientId": "TEST_PATIENT_001",
+  "personalInfo": {
+    "firstName": "John",
+    "lastName": "Doe",
+    "dateOfBirth": "1985-03-15",
+    "gender": "Male",
+    "ssn": "***-**-****",
+    "address": {
+      "street": "123 Healthcare Ave",
+      "city": "Medical City",
+      "state": "CA",
+      "zip": "90210"
+    },
+    "contact": {
+      "phone": "+1-555-0123",
+      "email": "john.doe@example.com"
+    }
+  },
+  "medicalHistory": {
+    "bloodType": "O+",
+    "allergies": [
+      "Penicillin",
+      "Peanuts"
+    ],
+    "chronicConditions": [
+      "Type 2 Diabetes",
+      "Hypertension"
+    ],
+    "medications": [
+      {
+        "name": "Metformin",
+        "dosage": "500mg",
+        "frequency": "Twice daily",
+        "prescribedDate": "2023-01-15"
+      },
+      {
+        "name": "Lisinopril",
+        "dosage": "10mg",
+        "frequency": "Once daily",
+        "prescribedDate": "2023-01-15"
+      }
+    ],
+    "surgeries": [
+      {
+        "procedure": "Appendectomy",
+        "date": "2010-08-22",
+        "hospital": "General Hospital",
+        "surgeon": "Dr. Smith"
+      }
+    ]
+  },
+  "currentVisit": {
+    "date": "2024-02-14",
+    "facility": "Primary Care Clinic",
+    "provider": "Dr. Jane Smith",
+    "chiefComplaint": "Annual physical examination",
+    "vitalSigns": {
+      "bloodPressure": "128/82 mmHg",
+      "heartRate": "72 bpm",
+      "temperature": "98.6°F",
+      "respiratoryRate": "16/min",
+      "weight": "180 lbs",
+      "height": "5'10\"",
+      "bmi": 25.8
+    },
+    "diagnosis": [
+      "Type 2 Diabetes Mellitus - Controlled",
+      "Essential Hypertension - Controlled"
+    ],
+    "treatment": [
+      "Continue current medications",
+      "Follow-up in 6 months",
+      "Annual lab work ordered"
+    ],
+    "labResults": {
+      "hemoglobinA1c": "6.5%",
+      "fastingGlucose": "110 mg/dL",
+      "cholesterol": {
+        "total": "185 mg/dL",
+        "ldl": "105 mg/dL",
+        "hdl": "55 mg/dL",
+        "triglycerides": "125 mg/dL"
+      }
+    }
+  },
+  "insuranceInfo": {
+    "provider": "Blue Cross Blue Shield",
+    "policyNumber": "BCBS-123456789",
+    "groupNumber": "GRP-987654"
+  },
+  "metadata": {
+    "recordCreated": "2024-02-14T10:30:00Z",
+    "lastModified": "2024-02-14T11:45:00Z",
+    "recordType": "Electronic Health Record",
+    "confidentialityLevel": "Restricted - HIPAA Protected"
+  }
+}

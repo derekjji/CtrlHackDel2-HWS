@@ -1,0 +1,37 @@
+# Environment and credentials
+.encryption_key
+*.key
+*.pem
+.env
+config.ini
+
+# Build artifacts
+*.o
+*.exe
+*.out
+healthcare_backend
+do_backend
+encrypt_util
+
+# Encrypted files  
+*.encrypted
+*.encrypted.tmp
+
+# Test data
+test_patient_*.json
+test_records/
+decrypted_*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
