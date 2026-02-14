@@ -1,0 +1,458 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+
+:root {
+  --bg: #f7f8fb;
+  --ink: #111218;
+  --muted: #6c7280;
+  --line: #e8ebf2;
+  --line-dark: #cfd5e3;
+  --surface: #ffffff;
+  --surface-soft: #fafbfd;
+  --accent: #151b28;
+  --green: #0f8a70;
+  --amber: #d7942a;
+  --plum: #7d4bb8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, rgba(234, 209, 167, 0.2), transparent),
+    linear-gradient(180deg, #fcfdff 0%, #f6f8fc 100%);
+}
+
+.appShell {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem 2rem;
+}
+
+.appShell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgba(17, 24, 39, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 24, 39, 0.03) 1px, transparent 1px);
+  background-size: 32px 32px;
+  mask-image: radial-gradient(circle at 50% 15%, #000 0%, rgba(0, 0, 0, 0.45) 50%, transparent 80%);
+  z-index: -2;
+}
+
+.bgOrbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(68px);
+  opacity: 0.35;
+}
+
+.orbA {
+  width: 280px;
+  height: 280px;
+  background: #f2e6d2;
+  top: -80px;
+  left: -80px;
+}
+
+.orbB {
+  width: 240px;
+  height: 240px;
+  background: #d6efe8;
+  top: 140px;
+  right: -80px;
+}
+
+.orbC {
+  display: none;
+}
+
+.topNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.25rem 0;
+}
+
+.brandRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.brandBadge {
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  font-weight: 800;
+  color: #2d2a26;
+  border: 1px solid #e2d6c7;
+  border-radius: 999px;
+  padding: 0.34rem 0.62rem;
+  background: linear-gradient(180deg, #fff9ef 0%, #ffffff 100%);
+}
+
+.brandText {
+  display: grid;
+  gap: 0;
+}
+
+.productTitle {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+  color: #17140f;
+}
+
+.brandSub {
+  font-size: 0.9rem;
+  color: #5d5448;
+  font-weight: 650;
+}
+
+.utilityBar {
+  margin-top: 0.9rem;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 0.75rem;
+  background: linear-gradient(120deg, #fffdf8 0%, #f8fffc 60%, #fff8fd 100%);
+  box-shadow: 0 10px 30px rgba(36, 46, 66, 0.08);
+  animation: fadeUp 420ms ease;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  align-items: stretch;
+}
+
+.utilityCard {
+  border: 1px solid #ebe7de;
+  border-radius: 12px;
+  background: #fff;
+  padding: 0.55rem 0.65rem;
+  display: grid;
+  gap: 0.1rem;
+}
+
+.utilityCard strong {
+  font-size: 0.8rem;
+}
+
+.utilityCard span {
+  font-size: 0.74rem;
+  color: var(--muted);
+}
+
+h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.04rem;
+  letter-spacing: -0.02em;
+}
+
+p {
+  margin: 0.6rem 0;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 68ch;
+}
+
+.heroMeta {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.rpcLine {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.77rem;
+  color: #4d4332;
+  border: 1px solid #e2d7c8;
+  border-radius: 999px;
+  padding: 0.28rem 0.58rem;
+  background: #fff9ef;
+  min-height: 100%;
+}
+
+.pillRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pill {
+  font-size: 0.74rem;
+  color: #37445f;
+  border: 1px solid #d5dff5;
+  border-radius: 999px;
+  padding: 0.28rem 0.55rem;
+  background: #f9fbff;
+}
+
+.pill:nth-child(1) {
+  color: #224aa8;
+  border-color: #cddcff;
+  background: #f4f8ff;
+}
+
+.pill:nth-child(2) {
+  color: #0f7f73;
+  border-color: #bfeee7;
+  background: #effcf9;
+}
+
+.pill:nth-child(3) {
+  color: #6944b4;
+  border-color: #decfff;
+  background: #f7f2ff;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.panel {
+  position: relative;
+  border: 1px solid #deded9;
+  border-radius: 18px;
+  padding: 0.9rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 251, 249, 0.98) 100%),
+    radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.4), transparent 35%);
+  box-shadow:
+    0 18px 40px rgba(28, 32, 24, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  overflow: hidden;
+}
+
+.panel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  opacity: 0.95;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  border-color: #d3d3ce;
+  box-shadow:
+    0 24px 44px rgba(28, 32, 24, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.panelStore {
+  border-color: #ded7cc;
+}
+
+.panelStore::before {
+  background: linear-gradient(90deg, #b27b1f 0%, #e7c38f 100%);
+}
+
+.panelRetrieve {
+  border-color: #d2ddd8;
+}
+
+.panelRetrieve::before {
+  background: linear-gradient(90deg, #1b7e63 0%, #6ab69f 100%);
+}
+
+label {
+  display: block;
+  margin: 0.62rem 0 0.25rem;
+  color: #596074;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  border-radius: 12px;
+  font: inherit;
+}
+
+input,
+textarea {
+  border: 1px solid var(--line);
+  background: var(--surface-soft);
+  color: var(--ink);
+  padding: 0.62rem 0.7rem;
+  transition: border-color 120ms ease, box-shadow 120ms ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #8fb39f;
+  box-shadow: 0 0 0 3px rgba(96, 151, 118, 0.17);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  margin-top: 0.62rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  padding: 0.66rem 0.85rem;
+  background: linear-gradient(120deg, #1f2b24 0%, #30423a 45%, #1b2621 100%);
+  color: #f4f7ff;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+  transition: transform 140ms ease, box-shadow 140ms ease, opacity 140ms ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(34, 52, 44, 0.28);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.status {
+  margin-top: 0.5rem;
+  color: #3e4d45;
+  font-size: 0.82rem;
+  font-weight: 550;
+}
+
+.output {
+  margin-top: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.62rem;
+  background: #f9fbff;
+  color: #223;
+  min-height: 2.5rem;
+  overflow-x: auto;
+  font-size: 0.75rem;
+}
+
+.panelAudit {
+  border-color: #ddd4e5;
+}
+
+.panelAudit::before {
+  background: linear-gradient(90deg, #7246a2 0%, #b495d6 100%);
+}
+
+.panelHead {
+  margin-bottom: 0.6rem;
+}
+
+.panelHead h2 {
+  margin: 0;
+  font-size: 1.08rem;
+}
+
+.panelHead span {
+  font-size: 0.77rem;
+  color: #6d655a;
+  font-weight: 600;
+}
+
+.auditHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.auditHeader button {
+  margin-top: 0;
+  max-width: 210px;
+}
+
+.auditGrid {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.audit {
+  border: 1px solid #e4ded8;
+  border-radius: 10px;
+  padding: 0.52rem 0.64rem;
+  background: linear-gradient(180deg, #fffdfa 0%, #ffffff 100%);
+  display: grid;
+  gap: 0.15rem;
+}
+
+.audit strong {
+  font-size: 0.86rem;
+}
+
+.audit span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 980px) {
+  .utilityBar {
+    grid-template-columns: 1fr;
+    padding: 0.7rem;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .appShell {
+    padding: 0.9rem 0.65rem 1.8rem;
+  }
+
+  .topNav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .auditHeader {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .auditHeader button {
+    max-width: none;
+  }
+}
