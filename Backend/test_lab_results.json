@@ -1,0 +1,148 @@
+{
+  "patientId": "LAB_TEST_003",
+  "recordType": "Laboratory Results",
+  "personalInfo": {
+    "firstName": "Emma",
+    "lastName": "Williams",
+    "dateOfBirth": "1988-03-25",
+    "mrn": "MRN-987654"
+  },
+  "labOrder": {
+    "orderId": "LAB-2024-0214-1245",
+    "orderDate": "2024-02-10T09:00:00Z",
+    "orderingPhysician": "Dr. Michael Thompson, MD",
+    "facility": "Central Medical Laboratory",
+    "priority": "Routine"
+  },
+  "specimenInfo": {
+    "collectionDate": "2024-02-10T09:30:00Z",
+    "collectionMethod": "Venipuncture",
+    "specimenType": "Whole Blood (EDTA)",
+    "collectedBy": "Rebecca Lee, Phlebotomist"
+  },
+  "completeBloodCount": {
+    "testDate": "2024-02-10T11:00:00Z",
+    "wbc": {
+      "value": 7.2,
+      "unit": "K/uL",
+      "referenceRange": "4.0-10.0",
+      "status": "Normal"
+    },
+    "rbc": {
+      "value": 4.8,
+      "unit": "M/uL",
+      "referenceRange": "4.2-5.4",
+      "status": "Normal"
+    },
+    "hemoglobin": {
+      "value": 14.2,
+      "unit": "g/dL",
+      "referenceRange": "12.0-16.0",
+      "status": "Normal"
+    },
+    "hematocrit": {
+      "value": 42.5,
+      "unit": "%",
+      "referenceRange": "37.0-47.0",
+      "status": "Normal"
+    },
+    "platelets": {
+      "value": 250,
+      "unit": "K/uL",
+      "referenceRange": "150-400",
+      "status": "Normal"
+    }
+  },
+  "metabolicPanel": {
+    "testDate": "2024-02-10T11:15:00Z",
+    "glucose": {
+      "value": 95,
+      "unit": "mg/dL",
+      "referenceRange": "70-100",
+      "status": "Normal"
+    },
+    "sodium": {
+      "value": 140,
+      "unit": "mmol/L",
+      "referenceRange": "136-145",
+      "status": "Normal"
+    },
+    "potassium": {
+      "value": 4.2,
+      "unit": "mmol/L",
+      "referenceRange": "3.5-5.0",
+      "status": "Normal"
+    },
+    "creatinine": {
+      "value": 0.9,
+      "unit": "mg/dL",
+      "referenceRange": "0.7-1.3",
+      "status": "Normal"
+    },
+    "bun": {
+      "value": 15,
+      "unit": "mg/dL",
+      "referenceRange": "7-20",
+      "status": "Normal"
+    }
+  },
+  "lipidPanel": {
+    "testDate": "2024-02-10T11:15:00Z",
+    "totalCholesterol": {
+      "value": 195,
+      "unit": "mg/dL",
+      "referenceRange": "<200",
+      "status": "Normal"
+    },
+    "ldl": {
+      "value": 115,
+      "unit": "mg/dL",
+      "referenceRange": "<100",
+      "status": "Borderline High"
+    },
+    "hdl": {
+      "value": 58,
+      "unit": "mg/dL",
+      "referenceRange": ">40",
+      "status": "Normal"
+    },
+    "triglycerides": {
+      "value": 110,
+      "unit": "mg/dL",
+      "referenceRange": "<150",
+      "status": "Normal"
+    }
+  },
+  "thyroidFunction": {
+    "testDate": "2024-02-10T11:30:00Z",
+    "tsh": {
+      "value": 2.5,
+      "unit": "mIU/L",
+      "referenceRange": "0.4-4.0",
+      "status": "Normal"
+    },
+    "freeT4": {
+      "value": 1.2,
+      "unit": "ng/dL",
+      "referenceRange": "0.8-1.8",
+      "status": "Normal"
+    }
+  },
+  "interpretation": {
+    "summary": "All test results within normal limits except LDL cholesterol which is borderline high.",
+    "recommendations": [
+      "Consider dietary modifications to lower LDL cholesterol",
+      "Increase physical activity",
+      "Recheck lipid panel in 6 months"
+    ],
+    "criticalValues": "None",
+    "reviewedBy": "Dr. Michael Thompson, MD",
+    "reviewDate": "2024-02-10T14:00:00Z"
+  },
+  "metadata": {
+    "reportGenerated": "2024-02-10T14:30:00Z",
+    "certifiedBy": "Dr. Lisa Park, MD - Clinical Pathologist",
+    "labCertification": "CLIA #12D3456789",
+    "confidentialityLevel": "Restricted - HIPAA Protected"
+  }
+}

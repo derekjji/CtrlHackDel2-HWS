@@ -1,0 +1,103 @@
+{
+  "patientId": "IMAGING_005",
+  "recordType": "Radiology Report",
+  "studyId": "RAD-2024-0214-3456",
+  "personalInfo": {
+    "firstName": "Sophia",
+    "lastName": "Anderson",
+    "dateOfBirth": "1995-09-30",
+    "mrn": "MRN-456789",
+    "gender": "Female"
+  },
+  "studyInformation": {
+    "examType": "CT Chest with Contrast",
+    "studyDate": "2024-02-14T08:00:00Z",
+    "accessionNumber": "ACC-2024-0214-001",
+    "facility": "Advanced Imaging Center",
+    "modality": "CT",
+    "bodyPart": "Chest",
+    "contrast": "Yes - Iodinated contrast IV"
+  },
+  "orderingPhysician": {
+    "name": "Dr. Robert Wilson, MD",
+    "specialty": "Pulmonology",
+    "phone": "+1-555-LUNG"
+  },
+  "clinicalIndication": "Persistent cough for 6 weeks, r/o pulmonary mass. History of 10 pack-year smoking.",
+  "technique": {
+    "scanner": "64-slice MDCT",
+    "protocol": "Chest CT with IV contrast",
+    "contrastAgent": "Omnipaque 350, 100mL IV",
+    "scanParameters": {
+      "sliceThickness": "2.5mm",
+      "reconstructionInterval": "1.25mm",
+      "kvp": 120,
+      "mas": 250
+    },
+    "radiationDose": {
+      "dlp": "450 mGy*cm",
+      "ctdi": "12 mGy"
+    }
+  },
+  "findings": {
+    "lungs": {
+      "summary": "No focal consolidation, mass, or nodule identified. No pleural effusion.",
+      "upperLobes": "Clear bilaterally",
+      "middleLobe": "Clear",
+      "lowerLobes": "Mild ground-glass opacities in the right lower lobe, likely inflammatory",
+      "airways": "Patent central airways. No significant bronchiectasis.",
+      "nodules": "None identified"
+    },
+    "mediastinum": {
+      "lymphNodes": "No enlarged mediastinal or hilar lymph nodes",
+      "vessels": "Thoracic aorta normal in caliber without aneurysm",
+      "heart": "Heart size normal. No pericardial effusion",
+      "esophagus": "Unremarkable"
+    },
+    "pleura": "No pleural effusion or pneumothorax",
+    "chest_wall": "Intact. No rib fractures.",
+    "bones": "No aggressive osseous lesion. Mild degenerative changes of the thoracic spine.",
+    "upperAbdomen": "Limited views of the upper abdomen are unremarkable. Liver, spleen, and adrenal glands appear normal."
+  },
+  "impression": [
+    "No pulmonary mass or suspicious nodule.",
+    "Mild ground-glass opacities in the right lower lobe, likely inflammatory or infectious. Consider follow-up chest X-ray in 6-8 weeks to ensure resolution.",
+    "No mediastinal lymphadenopathy.",
+    "No acute cardiopulmonary abnormality."
+  ],
+  "recommendations": [
+    "Clinical correlation recommended",
+    "Follow-up chest X-ray in 6-8 weeks if symptoms persist",
+    "Consider bronchoscopy if symptoms worsen or do not improve"
+  ],
+  "comparison": {
+    "priorStudy": "None available",
+    "changes": "N/A - Initial study"
+  },
+  "radiologist": {
+    "name": "Dr. Patricia Lee, MD",
+    "specialty": "Diagnostic Radiology",
+    "subspecialty": "Cardiothoracic Imaging",
+    "boardCertified": true,
+    "npi": "9876543210"
+  },
+  "reportDetails": {
+    "dictated": "2024-02-14T09:30:00Z",
+    "transcribed": "2024-02-14T10:00:00Z",
+    "signed": "2024-02-14T10:15:00Z",
+    "status": "Final",
+    "addendums": []
+  },
+  "dicomStorage": {
+    "studyInstanceUID": "1.2.840.113619.2.176.2025.1234567.890",
+    "numberOfSeries": 4,
+    "numberOfImages": 524,
+    "storageLocation": "PACS Archive",
+    "note": "DICOM images stored separately - reference only"
+  },
+  "metadata": {
+    "recordCreated": "2024-02-14T10:15:30Z",
+    "facility": "Advanced Imaging Center",
+    "confidentialityLevel": "Confidential - HIPAA Protected"
+  }
+}

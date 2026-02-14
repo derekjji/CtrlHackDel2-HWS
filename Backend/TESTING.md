@@ -2,6 +2,19 @@
 
 ## Test the Healthcare Backend
 
+### Quick Test Run
+
+**Windows PowerShell:**
+```powershell
+.\run_tests.ps1
+```
+
+**Linux/Mac:**
+```bash
+chmod +x run_tests.sh
+./run_tests.sh
+```
+
 ### 1. Setup Test Environment
 
 ```bash
@@ -93,6 +106,48 @@ If no output, files are identical! ✓
 # Download the file
 ./do_backend download downloaded.json test_upload.json
 ```
+
+## Test Cases Included
+
+The backend includes **6 comprehensive test cases** covering different healthcare scenarios:
+
+### 1. **Simple Patient Record** ([test_simple_record.json](test_simple_record.json))
+   - Basic patient information
+   - Simple diagnosis
+   - Tests basic encryption/decryption workflow
+
+### 2. **Emergency Record** ([test_emergency_record.json](test_emergency_record.json))
+   - Critical care scenario
+   - Vital signs and emergency treatment
+   - Complex nested data structures
+   - Tests high-priority data handling
+
+### 3. **Laboratory Results** ([test_lab_results.json](test_lab_results.json))
+   - Complete blood count (CBC)
+   - Metabolic panel
+   - Lipid panel
+   - Thyroid function tests
+   - Tests structured numeric data with reference ranges
+
+### 4. **E-Prescription** ([test_prescription.json](test_prescription.json))
+   - Multiple medications
+   - Prescriber information
+   - Pharmacy details
+   - DEA and NPI numbers
+   - Tests sensitive prescription data handling
+
+### 5. **Radiology Report** ([test_imaging_report.json](test_imaging_report.json))
+   - CT scan findings
+   - DICOM metadata
+   - Detailed radiologist interpretation
+   - Tests large text reports with medical terminology
+
+### 6. **Full Patient Record** ([sample_patient_record.json](sample_patient_record.json))
+   - Comprehensive health record
+   - Medical history
+   - Current visit details
+   - Insurance information
+   - Tests complete EHR workflow
 
 ## End-to-End Workflow Test
 

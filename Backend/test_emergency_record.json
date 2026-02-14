@@ -1,0 +1,70 @@
+{
+  "patientId": "EMERGENCY_002",
+  "recordType": "EMERGENCY",
+  "timestamp": "2024-02-14T03:45:00Z",
+  "personalInfo": {
+    "firstName": "Robert",
+    "lastName": "Martinez",
+    "dateOfBirth": "1975-11-08",
+    "gender": "Male",
+    "emergencyContact": {
+      "name": "Maria Martinez",
+      "relationship": "Spouse",
+      "phone": "+1-555-9876"
+    }
+  },
+  "emergencyDetails": {
+    "chiefComplaint": "Chest pain and difficulty breathing",
+    "severity": "CRITICAL",
+    "triageLevel": "Level 1 - Immediate",
+    "arrivalMethod": "Ambulance",
+    "arrivalTime": "2024-02-14T03:30:00Z",
+    "vitalSigns": {
+      "bloodPressure": "160/95 mmHg",
+      "heartRate": "110 bpm",
+      "oxygenSaturation": "92%",
+      "temperature": "99.2°F",
+      "respiratoryRate": "22/min",
+      "painLevel": "8/10"
+    }
+  },
+  "medicalHistory": {
+    "allergies": ["Aspirin", "Latex"],
+    "chronicConditions": ["Coronary Artery Disease", "Type 2 Diabetes"],
+    "currentMedications": [
+      "Atorvastatin 40mg daily",
+      "Metformin 1000mg twice daily",
+      "Nitroglycerin sublingual PRN"
+    ],
+    "previousSurgeries": [
+      {
+        "procedure": "Coronary Angioplasty",
+        "date": "2020-06-15"
+      }
+    ]
+  },
+  "treatment": {
+    "initialAssessment": "Suspected acute coronary syndrome",
+    "interventions": [
+      "ECG performed - ST elevation noted",
+      "IV access established",
+      "Oxygen therapy initiated",
+      "Aspirin 325mg administered (allergy override - critical situation)",
+      "Nitroglycerin sublingual given",
+      "Cardiology consult requested STAT"
+    ],
+    "diagnosticTests": [
+      "12-lead ECG",
+      "Cardiac enzymes (Troponin, CK-MB)",
+      "Chest X-ray",
+      "Blood glucose"
+    ],
+    "disposition": "Transfer to Cardiac Catheterization Lab"
+  },
+  "metadata": {
+    "recordCreated": "2024-02-14T03:45:30Z",
+    "attendingPhysician": "Dr. Sarah Chen, MD - Emergency Medicine",
+    "facility": "Metro General Hospital - Emergency Department",
+    "confidentialityLevel": "CRITICAL - HIPAA Protected"
+  }
+}

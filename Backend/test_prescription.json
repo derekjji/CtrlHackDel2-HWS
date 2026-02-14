@@ -1,0 +1,101 @@
+{
+  "patientId": "RX_TEST_004",
+  "recordType": "E-Prescription",
+  "prescriptionId": "RX-2024-0214-7890",
+  "personalInfo": {
+    "firstName": "David",
+    "lastName": "Chen",
+    "dateOfBirth": "1982-07-14",
+    "address": {
+      "street": "456 Health Street",
+      "city": "Wellness City",
+      "state": "CA",
+      "zip": "90211"
+    },
+    "phone": "+1-555-4321"
+  },
+  "prescriber": {
+    "name": "Dr. Jennifer Adams, MD",
+    "npi": "1234567890",
+    "deaNumber": "AA1234563",
+    "specialty": "Family Medicine",
+    "practice": {
+      "name": "Wellness Family Clinic",
+      "address": "789 Medical Plaza, Suite 200, Wellness City, CA 90211",
+      "phone": "+1-555-DOCTOR",
+      "fax": "+1-555-3333"
+    }
+  },
+  "medications": [
+    {
+      "drugName": "Lisinopril",
+      "strength": "20mg",
+      "dosageForm": "Tablet",
+      "quantity": 90,
+      "daysSupply": 90,
+      "directions": "Take 1 tablet by mouth once daily",
+      "refills": 3,
+      "substitutionAllowed": true,
+      "indication": "Hypertension",
+      "ndc": "00093-1075-01"
+    },
+    {
+      "drugName": "Atorvastatin",
+      "strength": "40mg",
+      "dosageForm": "Tablet",
+      "quantity": 90,
+      "daysSupply": 90,
+      "directions": "Take 1 tablet by mouth once daily in the evening",
+      "refills": 3,
+      "substitutionAllowed": true,
+      "indication": "Hyperlipidemia",
+      "ndc": "00071-0156-23"
+    },
+    {
+      "drugName": "Metformin HCl",
+      "strength": "1000mg",
+      "dosageForm": "Tablet, Extended Release",
+      "quantity": 60,
+      "daysSupply": 30,
+      "directions": "Take 1 tablet by mouth twice daily with meals",
+      "refills": 5,
+      "substitutionAllowed": true,
+      "indication": "Type 2 Diabetes Mellitus",
+      "ndc": "00093-7214-01"
+    }
+  ],
+  "pharmacyInfo": {
+    "name": "HealthMart Pharmacy",
+    "ncpdp": "1234567",
+    "address": "321 Main Street, Wellness City, CA 90211",
+    "phone": "+1-555-MEDS"
+  },
+  "prescriptionDetails": {
+    "dateWritten": "2024-02-14T10:30:00Z",
+    "effectiveDate": "2024-02-14",
+    "expirationDate": "2025-02-14",
+    "prescriptionOrigin": "Electronic",
+    "deliveryMethod": "Pickup"
+  },
+  "clinicalInfo": {
+    "diagnosis": [
+      "Essential Hypertension (I10)",
+      "Hyperlipidemia (E78.5)",
+      "Type 2 Diabetes Mellitus without complications (E11.9)"
+    ],
+    "allergies": ["Penicillin - Rash"],
+    "notes": "Patient tolerating current medications well. Blood pressure and glucose well controlled."
+  },
+  "verification": {
+    "electronicSignature": "Dr. Jennifer Adams, MD - Digital Signature Applied",
+    "signatureDateTime": "2024-02-14T10:35:00Z",
+    "verificationMethod": "Two-Factor Authentication"
+  },
+  "metadata": {
+    "recordCreated": "2024-02-14T10:35:30Z",
+    "transmittedToPharmacy": "2024-02-14T10:36:00Z",
+    "pharmacyAcknowledged": "2024-02-14T10:37:15Z",
+    "status": "Transmitted",
+    "confidentialityLevel": "Confidential - HIPAA Protected"
+  }
+}
