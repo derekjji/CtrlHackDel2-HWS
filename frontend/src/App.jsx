@@ -225,6 +225,7 @@ export default function App({ endpoint }) {
             <span className="splashWord">SERVICES</span>
           </div>
         </div>
+        <div className="splashProgressBar" />
       </div>
     );
   }
