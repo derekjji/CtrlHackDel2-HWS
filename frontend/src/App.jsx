@@ -4,6 +4,8 @@ import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { postMemoProof, sha256Hex } from "./solana";
 
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
+const HISTORY_STORAGE_KEY = "hws_patient_history";
+const MAX_HISTORY_ITEMS = 20;
 
 const EXAMPLE_JSON = `{
   "patientName": "John Doe",
@@ -25,6 +27,15 @@ export default function App({ endpoint }) {
   const [status, setStatus] = useState("Ready");
   const [responseData, setResponseData] = useState(null);
   const [audits, setAudits] = useState([]);
+  const [patientHistory, setPatientHistory] = useState(() => {
+    try {
+      const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+      const parsed = raw ? JSON.parse(raw) : [];
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  });
 
   const viewerWallets = useMemo(() => viewersInput.split(",").map((w) => w.trim()).filter(Boolean), [viewersInput]);
 
@@ -106,6 +117,18 @@ export default function App({ endpoint }) {
       return;
     }
 
+    const historyItem = {
+      patientId: lookupPatientId,
+      recordHash: data.recordHash || null,
+      record: data.record || null,
+      timestamp: new Date().toISOString()
+    };
+    setPatientHistory((prev) => {
+      const next = [historyItem, ...prev].slice(0, MAX_HISTORY_ITEMS);
+      localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(next));
+      return next;
+    });
+
     try {
       const auditTx = await postMemoProof({
         wallet,
@@ -136,6 +159,11 @@ export default function App({ endpoint }) {
 
     setStatus("Record retrieved. Access proof added to Solana.");
     await loadAudits(lookupPatientId);
+  }
+
+  function clearPatientHistory() {
+    setPatientHistory([]);
+    localStorage.removeItem(HISTORY_STORAGE_KEY);
   }
 
   async function loadAudits(targetPatientId = lookupPatientId) {
@@ -219,6 +247,27 @@ export default function App({ endpoint }) {
 
           <div className="status">{status}</div>
           <pre className="output">{responseData ? JSON.stringify(responseData, null, 2) : "No response yet."}</pre>
+        </section>
+
+        <section className="panel panelHistory">
+          <div className="historyHeader">
+            <div className="panelHead">
+              <h2>Past Patient Info</h2>
+              <span>Saved retrieval snapshots</span>
+            </div>
+            <button type="button" className="ghostBtn" onClick={clearPatientHistory}>Clear</button>
+          </div>
+          {patientHistory.length === 0 ? <p>No past patient data yet.</p> : null}
+          <div className="historyList">
+            {patientHistory.map((entry, idx) => (
+              <article className="historyCard" key={`${entry.patientId}-${entry.timestamp}-${idx}`}>
+                <strong>{entry.patientId}</strong>
+                <span>{entry.timestamp}</span>
+                <span>{entry.recordHash || "No hash"}</span>
+                <pre>{entry.record ? JSON.stringify(entry.record, null, 2) : "No record payload."}</pre>
+              </article>
+            ))}
+          </div>
         </section>
       </main>
 
