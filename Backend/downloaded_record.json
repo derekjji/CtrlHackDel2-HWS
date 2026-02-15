@@ -1,0 +1,9 @@
+{
+  "patientId": "TEST_SIMPLE_001",
+  "name": "Alice Johnson",
+  "dateOfBirth": "1990-05-20",
+  "bloodType": "A+",
+  "diagnosis": "Common Cold",
+  "visitDate": "2024-02-14",
+  "notes": "Patient presents with mild symptoms. Rest recommended."
+}
