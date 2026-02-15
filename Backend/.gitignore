@@ -1,12 +1,16 @@
 # Environment and credentials - CRITICAL SECURITY
+.env
+**/.env
 .encryption_key
+**/.encryption_key
 *.key
 *.pem
-.env
 config.ini
+**/config.ini
 
 # DO NOT IGNORE - these are safe templates
 !.env.example
+**/.env.example
 
 # Build artifacts
 *.o
@@ -27,6 +31,10 @@ decrypted_*
 
 # Dependencies
 node_modules/
+**/node_modules/
+
+# Build outputs
+**/dist/
 
 # OS files
 .DS_Store
@@ -41,3 +49,4 @@ Thumbs.db
 
 # Logs
 *.log
+npm-debug.log*
