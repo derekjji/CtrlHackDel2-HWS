@@ -252,7 +252,7 @@ export default function App({ endpoint }) {
       <section className="utilityBar">
         <article className="utilityCard">
           <strong>1. Connect Wallet</strong>
-          <span>Use Solflare to sign Solana proof memos.</span>
+          <span>Use a Solana wallet to sign Solana proof memos.</span>
         </article>
         <article className="utilityCard">
           <strong>2. Store Encrypted Record</strong>
@@ -274,7 +274,7 @@ export default function App({ endpoint }) {
             <label>Patient ID</label>
             <input value={patientId} onChange={(e) => setPatientId(e.target.value)} placeholder="patient-001" required />
 
-            <label>Allowed viewer wallets</label>
+            <label>Allowed Viewer Wallets</label>
             <input
               value={viewersInput}
               onChange={(e) => setViewersInput(e.target.value)}

@@ -142,6 +142,131 @@ body {
   font-weight: 650;
 }
 
+/* Wallet Adapter Styling */
+.wallet-adapter-button-trigger {
+  background: linear-gradient(120deg, #0056cc 0%, #0d6efd 45%, #0056cc 100%) !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  font-family: "Manrope", "Segoe UI", sans-serif !important;
+  font-weight: 650 !important;
+  font-size: 0.9rem !important;
+  padding: 0.6rem 1.2rem !important;
+  height: auto !important;
+  line-height: 1.4 !important;
+  transition: transform 140ms ease, box-shadow 140ms ease !important;
+}
+
+.wallet-adapter-button-trigger:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 10px 24px rgba(13, 110, 253, 0.4) !important;
+}
+
+.wallet-adapter-modal-overlay {
+  background: rgba(10, 20, 40, 0.5) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+.wallet-adapter-modal-wrapper {
+  font-family: "Manrope", "Segoe UI", sans-serif !important;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f4ff 100%) !important;
+  border: 1px solid #d4e0ff !important;
+  border-radius: 18px !important;
+  box-shadow: 0 24px 60px rgba(13, 110, 253, 0.25) !important;
+  overflow: hidden !important;
+}
+
+.wallet-adapter-modal-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0d6efd 0%, #6ea8ff 100%);
+  z-index: 10;
+}
+
+.wallet-adapter-modal-button-close {
+  position: absolute !important;
+  top: 12px !important;
+  right: 12px !important;
+  left: auto !important;
+  margin: 0 !important;
+  background: #e7f1ff !important;
+  border-radius: 10px !important;
+  padding: 6px !important;
+  width: auto !important;
+  transition: background 120ms ease !important;
+  z-index: 20 !important;
+}
+
+.wallet-adapter-modal-button-close:hover {
+  background: #cfe2ff !important;
+}
+
+.wallet-adapter-modal-button-close svg {
+  fill: #0056cc !important;
+}
+
+.wallet-adapter-modal-title {
+  color: #0d6efd !important;
+  font-family: "Manrope", "Segoe UI", sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.2rem !important;
+  letter-spacing: -0.02em !important;
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.wallet-adapter-modal-title::after {
+  content: "Connect to a wallet on Solana to continue";
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: #0d6efd;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button {
+  background: linear-gradient(180deg, #ffffff 0%, #f0f4ff 100%) !important;
+  border: 1.5px solid #d4e0ff !important;
+  border-radius: 10px !important;
+  color: #0a1428 !important;
+  font-family: "Manrope", "Segoe UI", sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 0.82rem !important;
+  padding: 0.45rem 0.7rem !important;
+  height: auto !important;
+  transition: all 140ms ease !important;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button .wallet-adapter-button-start-icon,
+.wallet-adapter-modal-list .wallet-adapter-button img {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.wallet-adapter-modal-list .wallet-adapter-button:hover {
+  background: linear-gradient(180deg, #e7f1ff 0%, #cfe2ff 100%) !important;
+  border-color: #0d6efd !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 18px rgba(13, 110, 253, 0.15) !important;
+}
+
+.wallet-adapter-modal-list {
+  padding: 0 1rem !important;
+}
+
+.wallet-adapter-modal-list li {
+  margin-bottom: 0.25rem !important;
+}
+
+.wallet-adapter-modal-middle-button {
+  color: #0056cc !important;
+  font-family: "Manrope", "Segoe UI", sans-serif !important;
+  font-weight: 600 !important;
+}
+
 .utilityBar {
   margin-top: 0.9rem;
   margin-bottom: 0.85rem;
