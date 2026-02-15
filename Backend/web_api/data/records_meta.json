@@ -173,11 +173,26 @@
       "patientId": "001",
       "ownerPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
       "allowedViewers": [
-        "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2"
+        "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+        "5EF45SVRFX4BaC1rtvj4fvQ4PXV9c1e9X8Ro3zoKsVbW"
       ],
-      "recordHash": "37b5385a58efa39eb45a97dc4c3899cf802f416201dc442e91d4d812e5dacd73",
-      "updatedAt": "2026-02-15T07:51:55.995Z",
+      "recordHash": "5a274ff4480ff4836469372f6ec798ddc926e7a62fd2b5050a25a30f923acfd7",
+      "updatedAt": "2026-02-15T08:03:25.885Z",
       "audits": [
+        {
+          "actorPubkey": "5EF45SVRFX4BaC1rtvj4fvQ4PXV9c1e9X8Ro3zoKsVbW",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "wyEwtddxmk2Ge2AwqjyRoA3uDXVU5L3DV3Q2UNcid719oDDDDRWUNsFp6MiDhcdEb9HkLmuGE8bFy32XHbzjFCp",
+          "timestamp": "2026-02-15T08:03:38.054Z"
+        },
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "4A8Z6TRNCDichCNd8cFiteLFvHzqe32kGdFqPirHrswtQCR4L1zDMbxZ7cojYNaC6sPV24gBceVb5BMs7kZXpS7n",
+          "timestamp": "2026-02-15T08:02:26.254Z"
+        },
         {
           "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
           "action": "READ",
@@ -331,6 +346,20 @@
           "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
           "solanaTx": "rpzijRDHxnm1UijZMKat8bG69Rx31BzZXGDMSjsBoHdsMHjf3bcRo2cZbhPfxkzeWbejLQziQ751XxMkeLxupho",
           "timestamp": "2026-02-15T07:51:55.995Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "FUymAfey4hD6MxBfYr7jEKDYQHQtZKexDuoQvi8iHYrFVJBLU1nGb5zLing16Tn6TocErfdeeqKgkSAeGWnjn9V",
+          "timestamp": "2026-02-15T08:02:11.112Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "2MFhu7ycbZCqsXwPxodxUyv5mWH54nXowRd6eBCKYr2ZUqxAjcujqQRtUbEgJaELhxTtyco7yhXRzmtZ2Am1gzMh",
+          "timestamp": "2026-02-15T08:03:25.885Z"
         }
       ]
     },
