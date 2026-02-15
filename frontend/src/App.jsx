@@ -156,7 +156,6 @@ export default function App({ endpoint }) {
 
       <header className="topNav">
         <div className="brandRow">
-          <span className="brandBadge">PLATFORM</span>
           <div className="brandText">
             <h1 className="productTitle">HWS</h1>
             <span className="brandSub">Health Web Services</span>
@@ -201,7 +200,7 @@ export default function App({ endpoint }) {
             <label>Record JSON</label>
             <textarea rows={11} value={recordJson} onChange={(e) => setRecordJson(e.target.value)} required />
 
-            <button type="submit">Encrypt + Upload + Anchor Proof</button>
+            <button type="submit">Encrypt + Upload</button>
           </form>
         </section>
 
