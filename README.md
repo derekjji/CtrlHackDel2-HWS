@@ -2,13 +2,19 @@
 
 This repo now includes a working React frontend connected to your existing C backend through a lightweight JS API wrapper.
 
+## 🚀 Quick Start
+
+See **[START.md](START.md)** for the fastest way to run all services together!
+
 ## What is where
 
 - `Backend/`: your existing C backend (`healthcare_backend.c`, DigitalOcean Spaces storage, encryption)
 - `Backend/web_api/`: Express wrapper API that calls the C binary and exposes HTTP endpoints for the frontend
-- `frontend/`: React + Vite frontend with Solana wallet integration and memo proofs
+- `Frontend/`: React + Vite frontend with Solana wallet integration and memo proofs
 
-## 1) Build your existing C backend
+## Detailed Setup
+
+### 1) Build your existing C backend
 
 From `Backend/`:
 
@@ -39,7 +45,7 @@ Default API: `http://localhost:4000`
 ## 3) Run frontend
 
 ```powershell
-cd frontend
+cd Frontend
 npm install
 Copy-Item .env.example .env
 npm run dev
