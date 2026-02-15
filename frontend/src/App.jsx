@@ -7,13 +7,29 @@ const API_URL = import.meta.env.VITE_API_URL || "http://localhost:4000";
 const HISTORY_STORAGE_KEY = "hws_patient_history";
 const MAX_HISTORY_ITEMS = 20;
 
-const EXAMPLE_JSON = `{
-  "patientName": "John Doe",
-  "dob": "1980-02-03",
-  "diagnosis": "Type 2 Diabetes",
-  "medications": ["Metformin"],
-  "lastVisit": "2026-02-14"
-}`;
+const DEFAULT_RECORD_FORM = {
+  patientName: "John Doe",
+  dob: "1980-02-03",
+  diagnosis: "Type 2 Diabetes",
+  medications: "Metformin",
+  allergies: "",
+  lastVisit: "2026-02-14",
+  notes: "Patient responding well to treatment."
+};
+
+function normalizeCsv(value) {
+  return value
+    .split(",")
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function formatDate(value) {
+  if (!value) return "N/A";
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) return value;
+  return parsed.toLocaleDateString();
+}
 
 export default function App({ endpoint }) {
   const { connection } = useConnection();
@@ -22,7 +38,7 @@ export default function App({ endpoint }) {
 
   const [patientId, setPatientId] = useState("patient-001");
   const [viewersInput, setViewersInput] = useState("");
-  const [recordJson, setRecordJson] = useState(EXAMPLE_JSON);
+  const [recordForm, setRecordForm] = useState(DEFAULT_RECORD_FORM);
   const [lookupPatientId, setLookupPatientId] = useState("patient-001");
   const [status, setStatus] = useState("Ready");
   const [responseData, setResponseData] = useState(null);
@@ -39,6 +55,10 @@ export default function App({ endpoint }) {
 
   const viewerWallets = useMemo(() => viewersInput.split(",").map((w) => w.trim()).filter(Boolean), [viewersInput]);
 
+  function updateRecordField(field, value) {
+    setRecordForm((prev) => ({ ...prev, [field]: value }));
+  }
+
   async function storeRecord(e) {
     e.preventDefault();
     if (!wallet.connected || !wallet.publicKey) {
@@ -46,13 +66,15 @@ export default function App({ endpoint }) {
       return;
     }
 
-    let parsed;
-    try {
-      parsed = JSON.parse(recordJson);
-    } catch {
-      setStatus("Record JSON is invalid.");
-      return;
-    }
+    const parsed = {
+      patientName: recordForm.patientName.trim(),
+      dob: recordForm.dob,
+      diagnosis: recordForm.diagnosis.trim(),
+      medications: normalizeCsv(recordForm.medications),
+      allergies: normalizeCsv(recordForm.allergies),
+      lastVisit: recordForm.lastVisit,
+      notes: recordForm.notes.trim()
+    };
 
     const canonical = JSON.stringify(parsed);
     const recordHash = await sha256Hex(canonical);
@@ -228,13 +250,66 @@ export default function App({ endpoint }) {
             />
 
             <label>Medical Record Details</label>
-            <textarea 
-              rows={11} 
-              value={recordJson} 
-              onChange={(e) => setRecordJson(e.target.value)} 
-              placeholder={`Example:\n{\n  "patientName": "John Doe",\n  "dob": "1980-02-03",\n  "diagnosis": "Type 2 Diabetes",\n  "medications": ["Metformin"],\n  "lastVisit": "2026-02-14",\n  "notes": "Patient responding well to treatment"\n}`}
-              required 
-            />
+            <div className="recordGrid">
+              <div>
+                <label>Patient Name</label>
+                <input
+                  value={recordForm.patientName}
+                  onChange={(e) => updateRecordField("patientName", e.target.value)}
+                  required
+                />
+              </div>
+              <div>
+                <label>Date of Birth</label>
+                <input
+                  type="date"
+                  value={recordForm.dob}
+                  onChange={(e) => updateRecordField("dob", e.target.value)}
+                  required
+                />
+              </div>
+              <div className="fieldFull">
+                <label>Diagnosis</label>
+                <input
+                  value={recordForm.diagnosis}
+                  onChange={(e) => updateRecordField("diagnosis", e.target.value)}
+                  required
+                />
+              </div>
+              <div className="fieldFull">
+                <label>Medications (comma separated)</label>
+                <input
+                  value={recordForm.medications}
+                  onChange={(e) => updateRecordField("medications", e.target.value)}
+                  placeholder="Metformin, Insulin"
+                />
+              </div>
+              <div className="fieldFull">
+                <label>Allergies (comma separated)</label>
+                <input
+                  value={recordForm.allergies}
+                  onChange={(e) => updateRecordField("allergies", e.target.value)}
+                  placeholder="Penicillin, Peanuts"
+                />
+              </div>
+              <div>
+                <label>Last Visit</label>
+                <input
+                  type="date"
+                  value={recordForm.lastVisit}
+                  onChange={(e) => updateRecordField("lastVisit", e.target.value)}
+                />
+              </div>
+              <div className="fieldFull">
+                <label>Clinical Notes</label>
+                <textarea
+                  rows={4}
+                  value={recordForm.notes}
+                  onChange={(e) => updateRecordField("notes", e.target.value)}
+                  placeholder="Summary notes for this visit"
+                />
+              </div>
+            </div>
 
             <button type="submit">Encrypt + Upload</button>
           </form>
@@ -268,9 +343,17 @@ export default function App({ endpoint }) {
             {patientHistory.map((entry, idx) => (
               <article className="historyCard" key={`${entry.patientId}-${entry.timestamp}-${idx}`}>
                 <strong>{entry.patientId}</strong>
-                <span>{entry.timestamp}</span>
-                <span>{entry.recordHash || "No hash"}</span>
-                <pre>{entry.record ? JSON.stringify(entry.record, null, 2) : "No record payload."}</pre>
+                <span>Retrieved: {formatDate(entry.timestamp)}</span>
+                <span>Hash: {entry.recordHash || "No hash"}</span>
+                <div className="historyDetails">
+                  <span><b>Name:</b> {entry.record?.patientName || "N/A"}</span>
+                  <span><b>DOB:</b> {formatDate(entry.record?.dob)}</span>
+                  <span><b>Diagnosis:</b> {entry.record?.diagnosis || "N/A"}</span>
+                  <span><b>Last Visit:</b> {formatDate(entry.record?.lastVisit)}</span>
+                  <span><b>Medications:</b> {Array.isArray(entry.record?.medications) && entry.record.medications.length > 0 ? entry.record.medications.join(", ") : "None listed"}</span>
+                  <span><b>Allergies:</b> {Array.isArray(entry.record?.allergies) && entry.record.allergies.length > 0 ? entry.record.allergies.join(", ") : "None listed"}</span>
+                  <span><b>Notes:</b> {entry.record?.notes || "No notes"}</span>
+                </div>
               </article>
             ))}
           </div>

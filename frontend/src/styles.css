@@ -311,6 +311,16 @@ label {
   font-weight: 600;
 }
 
+.recordGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem 0.6rem;
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+}
+
 input,
 textarea,
 button {
@@ -430,15 +440,23 @@ button:active {
   overflow-wrap: anywhere;
 }
 
-.historyCard pre {
-  margin: 0.2rem 0 0;
+.historyDetails {
+  margin-top: 0.25rem;
   border: 1px solid #d4e0ff;
   border-radius: 8px;
   background: #ffffff;
   padding: 0.42rem;
-  font-size: 0.72rem;
-  max-height: 160px;
-  overflow: auto;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.historyDetails span {
+  font-size: 0.74rem;
+  color: #0a1428;
+}
+
+.historyDetails b {
+  color: #004085;
 }
 
 .panelAudit {
@@ -518,6 +536,10 @@ button:active {
   }
 
   .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .recordGrid {
     grid-template-columns: 1fr;
   }
 }
