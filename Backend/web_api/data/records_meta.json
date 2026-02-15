@@ -173,11 +173,53 @@
       "patientId": "001",
       "ownerPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
       "allowedViewers": [
-        "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2"
+        "5EF45SVRFX4BaC1rtvj4fvQ4PXV9c1e9X8Ro3zoKsVbW"
       ],
-      "recordHash": "8994e477543d1e736081b9a79edf4fe71cefa40b86a8c3b3b71c06f2a5277903",
-      "updatedAt": "2026-02-15T04:55:46.630Z",
+      "recordHash": "91269d23b365bc7dc77cf06560f5fab199662f995f781e67ce6637d8dfebaaac",
+      "updatedAt": "2026-02-15T07:27:30.546Z",
       "audits": [
+        {
+          "actorPubkey": "5EF45SVRFX4BaC1rtvj4fvQ4PXV9c1e9X8Ro3zoKsVbW",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "9KNZwHhZGpSdF5YNTw15vYN5Sh1XBD7xGBdCcsZHRnbgHYtk7TFEWDYE4wTWqf4UaUKFpRXzg4QxDsbPiPGoGN8",
+          "timestamp": "2026-02-15T07:27:46.308Z"
+        },
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "5tfpxskG3npGexUeWTyUrod32CXXdoK5kywLj6RkDVgqvvBskoHNkNkMTwbYLSwKco9dyHZJ9cQwxXC57oH9you3",
+          "timestamp": "2026-02-15T07:27:33.809Z"
+        },
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "5aezPg9B7CPQaP9oV4G7HAfumQ1Y2cajaP8hMu26MUDQjRF5v4barCuic6KDexQM4rCw4gBVJ1LeAzgGCisZ2Rsf",
+          "timestamp": "2026-02-15T07:26:28.593Z"
+        },
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "qtjYdoZzwPxBQJNRCKa5ZygjhJJvYnUQmUAbPU7yW9N8QY3KeKtEV2BfgovfmYTD4NBw49F4ihAMSzUgiJ2pciG",
+          "timestamp": "2026-02-15T07:25:36.403Z"
+        },
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "ptN4BeiXVxhGzyuUGzsvNNB36yFi4AjMLcTAP6WXSaCQttx3yukEmjXULqrELFx7xQgHSr3rfLJehY2mnnc7gPM",
+          "timestamp": "2026-02-15T07:25:30.034Z"
+        },
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "5WZsFXBCUpdpBXCcavdHg5qtbR4mcY9Y4vJMwFHFtW5YXUmpkxSwxYaLhcFhDucxziFhopxtLpUDCtRHzsDfajEY",
+          "timestamp": "2026-02-15T07:25:20.311Z"
+        },
         {
           "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
           "action": "READ",
@@ -247,6 +289,50 @@
           "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
           "solanaTx": "uxaSDpjjQAvQ6jMMzHokrLPnnjb65LhncmL3JKDXo1tDY3pjVoHf25wuECU5YThtFDEML8NJMaH4GJ8n3kv9VMd",
           "timestamp": "2026-02-15T04:55:46.630Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "SfdhhbAVVUD6QgWoq4BX2DTWEtvQCqbaDFbDHjshT1YPpL7XHWML82H9TFs1wwuEyLnXLSamFLJ2QxdEmpFTrB9",
+          "timestamp": "2026-02-15T07:26:12.220Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "3JwYrhZCHz5x8iBeqTPuUNkbuxocgVhD4cGByeZNQWgxpeRdLzsjZSDBcADa2DJMqzrM2LjDM39xSPvysCb4DeyF",
+          "timestamp": "2026-02-15T07:27:30.546Z"
+        }
+      ]
+    },
+    "002": {
+      "patientId": "002",
+      "ownerPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+      "allowedViewers": [],
+      "recordHash": "ba3ef963d8e0eacd868a8bbcdd186010c8894edf7293bb9d0b5e2e5373fc77ad",
+      "updatedAt": "2026-02-15T07:25:59.309Z",
+      "audits": [
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "4kkyKNGT3qKqnYmG1DWSiUPfE9MpFyvtBR7BaxAMTpzVyuQTi7SPg7sgR75rqf3kRfW5A588rJByVXyBzGq2Zhqw",
+          "timestamp": "2026-02-15T07:26:03.051Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "3MGCoAzPxL2pvzu3z385m21gCXosKGVk88KEJN3ZR9ieEv8jNhgv2Wkwk3VxpHEmN49Ta3pz7r5XRXrz5cPVkLsB",
+          "timestamp": "2026-02-15T07:25:55.389Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "fNEcNv5CDdn3tVRH7MZHUKqBnR3nigRDWpPLwmTJWqxCX6FfUi7qup5VG2B7jJCETvcSivCMn4XGoXFLf4cQmFB",
+          "timestamp": "2026-02-15T07:25:59.309Z"
         }
       ]
     }
