@@ -8,13 +8,13 @@ const HISTORY_STORAGE_KEY = "hws_patient_history";
 const MAX_HISTORY_ITEMS = 20;
 
 const DEFAULT_RECORD_FORM = {
-  patientName: "John Doe",
-  dob: "1980-02-03",
-  diagnosis: "Type 2 Diabetes",
-  medications: "Metformin",
+  patientName: "",
+  dob: "",
+  diagnosis: "",
+  medications: "",
   allergies: "",
-  lastVisit: "2026-02-14",
-  notes: "Patient responding well to treatment."
+  lastVisit: "",
+  notes: ""
 };
 
 function normalizeCsv(value) {
@@ -38,10 +38,10 @@ export default function App({ endpoint }) {
 
   const [showSplash, setShowSplash] = useState(true);
   const [isReady, setIsReady] = useState(false);
-  const [patientId, setPatientId] = useState("patient-001");
+  const [patientId, setPatientId] = useState("");
   const [viewersInput, setViewersInput] = useState("");
   const [recordForm, setRecordForm] = useState(DEFAULT_RECORD_FORM);
-  const [lookupPatientId, setLookupPatientId] = useState("patient-001");
+  const [lookupPatientId, setLookupPatientId] = useState("");
   const [status, setStatus] = useState("Ready");
   const [responseData, setResponseData] = useState(null);
   const [audits, setAudits] = useState([]);
@@ -272,7 +272,7 @@ export default function App({ endpoint }) {
           </div>
           <form onSubmit={storeRecord}>
             <label>Patient ID</label>
-            <input value={patientId} onChange={(e) => setPatientId(e.target.value)} required />
+            <input value={patientId} onChange={(e) => setPatientId(e.target.value)} placeholder="patient-001" required />
 
             <label>Allowed viewer wallets</label>
             <input
@@ -288,6 +288,7 @@ export default function App({ endpoint }) {
                 <input
                   value={recordForm.patientName}
                   onChange={(e) => updateRecordField("patientName", e.target.value)}
+                  placeholder="John Doe"
                   required
                 />
               </div>
@@ -305,6 +306,7 @@ export default function App({ endpoint }) {
                 <input
                   value={recordForm.diagnosis}
                   onChange={(e) => updateRecordField("diagnosis", e.target.value)}
+                  placeholder="Type 2 Diabetes"
                   required
                 />
               </div>
@@ -354,7 +356,7 @@ export default function App({ endpoint }) {
           </div>
           <form onSubmit={retrieveRecord}>
             <label>Patient ID</label>
-            <input value={lookupPatientId} onChange={(e) => setLookupPatientId(e.target.value)} required />
+            <input value={lookupPatientId} onChange={(e) => setLookupPatientId(e.target.value)} placeholder="patient-001" required />
             <button type="submit">Decrypt & Display Patient Data</button>
           </form>
 
