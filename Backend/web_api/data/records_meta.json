@@ -173,11 +173,32 @@
       "patientId": "001",
       "ownerPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
       "allowedViewers": [
-        "5EF45SVRFX4BaC1rtvj4fvQ4PXV9c1e9X8Ro3zoKsVbW"
+        "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2"
       ],
-      "recordHash": "91269d23b365bc7dc77cf06560f5fab199662f995f781e67ce6637d8dfebaaac",
-      "updatedAt": "2026-02-15T07:27:30.546Z",
+      "recordHash": "37b5385a58efa39eb45a97dc4c3899cf802f416201dc442e91d4d812e5dacd73",
+      "updatedAt": "2026-02-15T07:51:55.995Z",
       "audits": [
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "3eaFJj9LgEmV6cusALsANDJ4ZugwPxYd8fxo7kAyXuD9eUCYmw2i67yE8KTAM2djNGR5oqeHN3ULvaEyZuQSTM6S",
+          "timestamp": "2026-02-15T07:56:31.020Z"
+        },
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "3ehDGF6oCV4APXpgmHmxy3ogn2MMFG3pchadoYSw8cL236uukpVDjgHsuFW8j8x5UnEJCN68Jh2uwF14wzeUP2Qn",
+          "timestamp": "2026-02-15T07:52:03.351Z"
+        },
+        {
+          "actorPubkey": "5EF45SVRFX4BaC1rtvj4fvQ4PXV9c1e9X8Ro3zoKsVbW",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "3eEFNPMBSmxPBx3VrAZ76A652sdxizJKJ9BWRVCQ4ZNREqRJpMkCMNbLNPasTm755VSpMzhxzD6mXX2YMX8bYmJa",
+          "timestamp": "2026-02-15T07:28:49.856Z"
+        },
         {
           "actorPubkey": "5EF45SVRFX4BaC1rtvj4fvQ4PXV9c1e9X8Ro3zoKsVbW",
           "action": "READ",
@@ -303,6 +324,13 @@
           "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
           "solanaTx": "3JwYrhZCHz5x8iBeqTPuUNkbuxocgVhD4cGByeZNQWgxpeRdLzsjZSDBcADa2DJMqzrM2LjDM39xSPvysCb4DeyF",
           "timestamp": "2026-02-15T07:27:30.546Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "rpzijRDHxnm1UijZMKat8bG69Rx31BzZXGDMSjsBoHdsMHjf3bcRo2cZbhPfxkzeWbejLQziQ751XxMkeLxupho",
+          "timestamp": "2026-02-15T07:51:55.995Z"
         }
       ]
     },

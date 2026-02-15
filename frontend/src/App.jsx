@@ -26,6 +26,15 @@ function normalizeCsv(value) {
 
 function formatDate(value) {
   if (!value) return "N/A";
+  
+  // If it's a date-only string (YYYY-MM-DD), parse as local date to avoid timezone shift
+  if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    const [year, month, day] = value.split('-').map(Number);
+    const localDate = new Date(year, month - 1, day); // month is 0-indexed
+    return localDate.toLocaleDateString();
+  }
+  
+  // Otherwise parse normally (for timestamps with time)
   const parsed = new Date(value);
   if (Number.isNaN(parsed.getTime())) return value;
   return parsed.toLocaleDateString();
