@@ -327,7 +327,7 @@ export default function App({ endpoint }) {
                 />
               </div>
               <div>
-                <label>Last Visit</label>
+                <label>Visit Date</label>
                 <input
                   type="date"
                   value={recordForm.lastVisit}
