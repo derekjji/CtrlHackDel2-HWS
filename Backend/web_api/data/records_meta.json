@@ -1,3 +1,43 @@
 {
-  "records": {}
+  "records": {
+    "conn-test-007": {
+      "patientId": "conn-test-007",
+      "ownerPubkey": "test-owner",
+      "allowedViewers": [],
+      "recordHash": "62958e8c935069a2be3efdc9b66533d5f1c77ebe8cf5a39a9455293c5a2efd6a",
+      "updatedAt": "2026-02-15T03:07:52.728Z",
+      "audits": [
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "test-owner",
+          "solanaTx": null,
+          "timestamp": "2026-02-15T03:07:52.728Z"
+        }
+      ]
+    },
+    "patient-001": {
+      "patientId": "patient-001",
+      "ownerPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+      "allowedViewers": [],
+      "recordHash": "fa3815a0c1e5eba3d6361b967e2c48fb26d319017829af4c53614ec168f900a1",
+      "updatedAt": "2026-02-15T03:12:05.825Z",
+      "audits": [
+        {
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "action": "READ",
+          "result": "SUCCESS",
+          "solanaTx": "3CJkcyxcYiG1pdh9kD4imyD1ZF3dN41W9tKqwXEAGupzPCMZwQve1Q4sM7yPPNSPiWBw2LR2ESRP5Th6GoXZJrtf",
+          "timestamp": "2026-02-15T03:12:23.893Z"
+        },
+        {
+          "action": "STORE",
+          "result": "SUCCESS",
+          "actorPubkey": "6VL8rYRTU4gPAT2j4VbHmHVHfgVLjkeovsTwRoAPLGs2",
+          "solanaTx": "2nGPQWMjdPc6MPanc3Q4kVKQeAmPDeahtvANaSpnfb6b8b77vpdWaR4sRYBhW24aV8vVo5GNdNbRUN83mjqcaGY8",
+          "timestamp": "2026-02-15T03:12:05.825Z"
+        }
+      ]
+    }
+  }
 }

@@ -7,7 +7,16 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
-dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
+dotenv.config({ path: path.resolve(process.cwd(), "..", ".env") });
+
+if (process.platform === "win32") {
+  const extraPaths = [
+    process.env.MSYS2_UCRT64_BIN || "C:\\msys64\\ucrt64\\bin",
+    process.env.MSYS2_USR_BIN || "C:\\msys64\\usr\\bin"
+  ];
+  process.env.PATH = `${extraPaths.join(";")};${process.env.PATH || ""}`;
+}
 
 const execFileAsync = promisify(execFile);
 const app = express();
@@ -55,7 +64,12 @@ function parseStoredHash(stdout) {
 
 async function runBackend(args) {
   const binaryPath = path.resolve(process.cwd(), BACKEND_BINARY);
-  return execFileAsync(binaryPath, args, { windowsHide: true, maxBuffer: 1024 * 1024 * 5 });
+  try {
+    return await execFileAsync(binaryPath, args, { windowsHide: true, maxBuffer: 1024 * 1024 * 5 });
+  } catch (error) {
+    const details = [error.message, error.stdout, error.stderr].filter(Boolean).join("\n");
+    throw new Error(details || "Backend command failed");
+  }
 }
 
 async function ensureDataStore() {
