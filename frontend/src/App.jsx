@@ -156,9 +156,11 @@ export default function App({ endpoint }) {
 
       <header className="topNav">
         <div className="brandRow">
+          <img src="/hws_logo.png" alt="HWS Logo" className="brandLogo" />
+          <span className="brandDivider">|</span>
           <div className="brandText">
-            <h1 className="productTitle">HWS</h1>
-            <span className="brandSub">Health Web Services</span>
+            <h1 className="productTitle">Health Web Services</h1>
+            <span className="brandSub">Accessible Online Healthcare Records</span>
           </div>
         </div>
         <WalletMultiButton className="walletBtn" />
