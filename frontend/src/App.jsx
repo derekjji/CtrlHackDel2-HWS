@@ -227,8 +227,14 @@ export default function App({ endpoint }) {
               placeholder="wallet1,wallet2"
             />
 
-            <label>Record JSON</label>
-            <textarea rows={11} value={recordJson} onChange={(e) => setRecordJson(e.target.value)} required />
+            <label>Medical Record Details</label>
+            <textarea 
+              rows={11} 
+              value={recordJson} 
+              onChange={(e) => setRecordJson(e.target.value)} 
+              placeholder={`Example:\n{\n  "patientName": "John Doe",\n  "dob": "1980-02-03",\n  "diagnosis": "Type 2 Diabetes",\n  "medications": ["Metformin"],\n  "lastVisit": "2026-02-14",\n  "notes": "Patient responding well to treatment"\n}`}
+              required 
+            />
 
             <button type="submit">Encrypt + Upload</button>
           </form>
