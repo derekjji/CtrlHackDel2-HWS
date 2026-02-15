@@ -49,7 +49,7 @@ Frontend default: `http://localhost:5173`
 
 ## Solana in frontend
 
-Frontend uses wallet adapter (Phantom/Solflare) and writes memo proofs to Solana Devnet for:
+Frontend uses a Solflare wallet adapter and writes memo proofs to Solana Devnet for:
 - record storage proof
 - record access proof
 

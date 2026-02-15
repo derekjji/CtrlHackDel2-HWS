@@ -168,7 +168,7 @@ export default function App({ endpoint }) {
       <section className="utilityBar">
         <article className="utilityCard">
           <strong>1. Connect Wallet</strong>
-          <span>Use Phantom or Solflare to sign proof memos.</span>
+          <span>Use Solflare to sign Solana proof memos.</span>
         </article>
         <article className="utilityCard">
           <strong>2. Store Encrypted Record</strong>
