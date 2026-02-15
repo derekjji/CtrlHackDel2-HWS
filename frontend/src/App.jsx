@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 import { postMemoProof, sha256Hex } from "./solana";
@@ -36,6 +36,8 @@ export default function App({ endpoint }) {
   const wallet = useWallet();
   const walletAddress = wallet.publicKey?.toBase58() || "";
 
+  const [showSplash, setShowSplash] = useState(true);
+  const [isReady, setIsReady] = useState(false);
   const [patientId, setPatientId] = useState("patient-001");
   const [viewersInput, setViewersInput] = useState("");
   const [recordForm, setRecordForm] = useState(DEFAULT_RECORD_FORM);
@@ -54,6 +56,21 @@ export default function App({ endpoint }) {
   });
 
   const viewerWallets = useMemo(() => viewersInput.split(",").map((w) => w.trim()).filter(Boolean), [viewersInput]);
+
+  useEffect(() => {
+    const readyTimer = setTimeout(() => {
+      setIsReady(true);
+    }, 100);
+    return () => clearTimeout(readyTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!isReady) return;
+    const splashTimer = setTimeout(() => {
+      setShowSplash(false);
+    }, 4500);
+    return () => clearTimeout(splashTimer);
+  }, [isReady]);
 
   function updateRecordField(field, value) {
     setRecordForm((prev) => ({ ...prev, [field]: value }));
@@ -196,6 +213,22 @@ export default function App({ endpoint }) {
     }
   }
 
+  if (isReady && showSplash) {
+    return (
+      <div className="splashScreen">
+        <div className="splashContent">
+          <img src="/hws_logo.png" alt="HWS Logo" className="splashLogo" />
+          <div className="splashDivider">|</div>
+          <div className="splashWordsContainer">
+            <span className="splashWord">HEALTH</span>
+            <span className="splashWord">WEB</span>
+            <span className="splashWord">SERVICES</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="appShell">
       <div className="bgOrbs" aria-hidden="true">
@@ -229,14 +262,13 @@ export default function App({ endpoint }) {
           <strong>3. Retrieve + Verify</strong>
           <span>Check permissions, decrypt data, and log audit proof.</span>
         </article>
-        <div className="rpcLine">RPC: {endpoint}</div>
       </section>
 
       <main className="workspace">
         <section className="panel panelStore">
           <div className="panelHead">
             <h2>Store Record</h2>
-            <span>Encrypt + off-chain storage + proof anchor</span>
+            <span>Save and upload patient health records</span>
           </div>
           <form onSubmit={storeRecord}>
             <label>Patient ID</label>
@@ -311,19 +343,19 @@ export default function App({ endpoint }) {
               </div>
             </div>
 
-            <button type="submit">Encrypt + Upload</button>
+            <button type="submit">Encrypt & Upload Patient Data</button>
           </form>
         </section>
 
         <section className="panel panelRetrieve">
           <div className="panelHead">
             <h2>Retrieve Record</h2>
-            <span>Permission check + decrypt + verify</span>
+            <span>Access and view patient records</span>
           </div>
           <form onSubmit={retrieveRecord}>
             <label>Patient ID</label>
             <input value={lookupPatientId} onChange={(e) => setLookupPatientId(e.target.value)} required />
-            <button type="submit">Verify Access + Decrypt</button>
+            <button type="submit">Decrypt & Display Patient Data</button>
           </form>
 
           <div className="status">{status}</div>
@@ -334,7 +366,7 @@ export default function App({ endpoint }) {
           <div className="historyHeader">
             <div className="panelHead">
               <h2>Past Patient Info</h2>
-              <span>Saved retrieval snapshots</span>
+              <span>View patient's previous records</span>
             </div>
             <button type="button" className="ghostBtn" onClick={clearPatientHistory}>Clear</button>
           </div>
